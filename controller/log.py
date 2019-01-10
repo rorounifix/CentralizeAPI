@@ -9,4 +9,4 @@ def log(path, e):
         logfile.close()
 
 if __name__ == "__main__":
-    log("test")
+    log("test", "error")

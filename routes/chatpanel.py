@@ -4,7 +4,7 @@ from configparser import ConfigParser
 from controller.chatpanel.chatbot import send
 from controller.response import response
 
-class ChatPanel(Resource):
+class Talk(Resource):
 
     def __init__(self):
         pass
@@ -42,9 +42,15 @@ class Train(Resource):
 
 
     def post(self):
-        return {"test":'test'}
+        msg = request.json["message"]
+        res = request.json["response"]
+
+        return {
+            "message":msg,
+            "response":res
+        }
 
 
 
 if __name__ == "__main__":
-    ChatPanel()
+    Train()

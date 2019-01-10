@@ -12,7 +12,7 @@ if not checkAccess():
     changeConfig()
 
 
-api.add_resource(ChatPanel, '/')
+api.add_resource(Talk, '/')
 api.add_resource(Train, '/train')
 
 if __name__ == '__main__':
