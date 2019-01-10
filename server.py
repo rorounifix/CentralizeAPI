@@ -12,7 +12,8 @@ if not checkAccess():
     changeConfig()
 
 
-api.add_resource(ChatPanel, '/', resource_class_kwargs={"token_access":"token_access"})
+api.add_resource(ChatPanel, '/')
+api.add_resource(Train, '/train')
 
 if __name__ == '__main__':
     app.run(debug=True)
