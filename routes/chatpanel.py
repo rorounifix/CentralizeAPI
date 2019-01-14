@@ -4,6 +4,7 @@ from configparser import ConfigParser
 from controller.chatpanel.chatbot import send
 from controller.chatpanel.createbot import createbot
 from controller.response import response
+from controller.createBot import create_new_bot
 
 class Talk(Resource):
 
@@ -67,20 +68,23 @@ class Create(Resource):
         pass
 
     def post(self):
+
         res = response()
 
         try:
             data = {
-            	"bot_name":request.json['bot_name'],
             	"name":request.json['name']
             }
 
-            bot_res = createbot(data["bot_name"], data["name"])
-            if bot_res == False: raise Exception('already Exists')
+
+            bot_res = create_new_bot(data["name"])
+            print(bot_res)
+            # if bot_res == False: raise Exception('already Exists')
             res['status'] = 1
             res["message"] = "success"
-            res['data'] = bot_res["displayName"]
+            # res['data'] = bot_res["displayName"]
         except Exception as e:
+            print(e)
             res['message'] = str(e)
 
         return res
