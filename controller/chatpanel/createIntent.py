@@ -8,7 +8,7 @@ config.read('config/config.ini')
 token_access = config["MAIN"]['token_access']
 url_bot = config["MAIN"]["url_bot"]
 
-def createbot(botname, intents):
+def createIntent(botname, intents):
     try:
         headers = {
             "Content-Type":"application/json",
@@ -28,4 +28,4 @@ def createbot(botname, intents):
         return False
 
 if __name__ == "__main__":
-    createbot("newbot-b1c3c", "test")
+    createIntent("newbot-b1c3c", "test")
