@@ -14,8 +14,8 @@ database = config["Mongo"]['database']
 
 register_connection(host=address, port=int(port), db=database, alias='default')
 
-test = Testdata(tags="test", num=123)
-test.save()
+# test = Testdata(tags="test", num=123)
+# test.save()
 
 ##client = MongoClient(str(address), int(port))
 ##db = client[database]

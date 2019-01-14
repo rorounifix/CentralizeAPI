@@ -21,7 +21,7 @@ def create_new_bot(botname):
 
     url_log_in = "https://accounts.google.com/signin/oauth/identifier?client_id=1016740739912-2dfjqgvhb5aqn920vvarkfniio1cahlh.apps.googleusercontent.com&as=VW_DLOzKP2B3bbgZKkFG7A&destination=https%3A%2F%2Fconsole.dialogflow.com&approval_state=!ChRUWXpKUEhtZTV2M2Q0TGItVEMwRxIfQTZpeWNVVXpMWDhhOEhuU1JuY2dubW9lZTlTcmhCWQ%E2%88%99APNbktkAAAAAXD1pYU7g8TABnnRs2MfIdIyZnahDCx4F&oauthgdpr=1&oauthriskyscope=1&xsrfsig=ChkAeAh8T8JQ0qmdw0VQZLEPzE10dskpzCtDEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_driver = os.getcwd() + "\\chromedriver.exe"
 

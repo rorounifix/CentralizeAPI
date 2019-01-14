@@ -111,23 +111,17 @@ class Create(Resource):
             if len(AgentSchema.objects(name__exact=data['name'])) > 0: raise Exception("Name Already Exists")
 
             bot_res = create_new_bot(data["name"])
-            # print(bot_res)
-            # {'agent_id': '6ab72f50-b861-41a2-9aa1-86177a30c72d', 'name': 'testss', 'project_id': 'testss-b8948'}
             save_bot = AgentSchema(
                 name = bot_res['name'],
                 project_id = bot_res['project_id'],
                 agent_id = bot_res['agent_id']
-
-                # name = data['name'],
-                # project_id = "bot_res['project_id']",
-                # agent_id = "bot_res['agent_id']"
-            )
+                )
 
             save_bot.save()
-            # if bot_res == False: raise Exception('already Exists')
             res['status'] = 1
             res["message"] = "success"
-            # res['data'] = bot_res["displayName"]
+            res['data'] = bot_res
+            
         except Exception as e:
             print(e)
             res['message'] = str(e)
