@@ -106,7 +106,7 @@ class Create(Resource):
         try:
             data = {
             	"name":request.json['name']
-            }
+                    }
 
             if len(AgentSchema.objects(name__exact=data['name'])) > 0: raise Exception("Name Already Exists")
 
@@ -121,7 +121,7 @@ class Create(Resource):
             res['status'] = 1
             res["message"] = "success"
             res['data'] = bot_res
-            
+
         except Exception as e:
             print(e)
             res['message'] = str(e)
